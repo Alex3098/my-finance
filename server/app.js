@@ -10,11 +10,11 @@ app.use(cors())
 app.use(express.json())
 
 // Routers
-const userRegister = require('./routes/register')
-const addAccount = require('./routes/accounts')
+const userRoutes = require('./routes/register')
+const accountRoutes = require('./routes/accounts')
 
-app.use('/api/v1/register', userRegister)
-app.use('/api/v1/accounts', addAccount)
+app.use('/api/v1/register', userRoutes)
+app.use('/api/v1/accounts', accountRoutes)
 
 app.listen(PORT, async () => {
   console.log(`Sever started on port ${PORT}`)

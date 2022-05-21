@@ -1,4 +1,4 @@
-const { sequelize, User } = require('../models')
+const { User } = require('../models')
 
 // @desc Register new user
 // @route /api/v1/register
@@ -7,7 +7,8 @@ exports.registerUser = async (req, res, next) => {
   const { login, email, password } = req.body
 
   try {
-    const user = await User.create({ userName: login, email, password })
+    const user = await User.create({ login, email, password })
+
     return res.json(user)
   } catch (error) {
     console.log(error)

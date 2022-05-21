@@ -8,11 +8,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ User }) {
-      this.belongsTo(User, { foreignKey: 'user_uuid', as: 'users' })
+      this.belongsTo(User, { foreignKey: 'userId', as: 'users' })
+    }
+
+    toJSON() {
+      return { ...this.get(), id: undefined }; // hide id field from json response
     }
   }
   Account.init({
-    account_id: {
+    id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
@@ -30,18 +34,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    account_type: {
+    accountType: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'Regular',
     },
-    inc_total_balance: {
+    includeTotalBalance: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true,
     },
-    user_uuid: {
-      type: DataTypes.UUID,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {

@@ -8,25 +8,25 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Account }) {
-      this.hasMany(Account, { foreignKey: 'user_uuid', as: 'accounts' })
+      this.hasMany(Account, { foreignKey: 'userId', as: 'accounts' })
     }
 
     toJSON() {
-      return { ...this.get(), user_id: undefined }; // hide this field from json response
+      return { ...this.get(), id: undefined }; // hide id field from json response
     }
   }
   User.init({
-    user_id: {
+    id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    user_uuid: {
+    uuid: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
     },
-    userName: {
+    login: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

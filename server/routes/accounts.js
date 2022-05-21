@@ -4,11 +4,11 @@ const router = express.Router()
 const { addAccount, getAccount } = require('../controllers/accounts')
 
 router
-  .route('/')
+  .route('/create')
   .post(addAccount)
 
-router
-  .route('/:uuid')
-  .get(getAccount)
+// router
+//   .route('/:uuid')
+//   .get(getAccount)
 
 module.exports = router

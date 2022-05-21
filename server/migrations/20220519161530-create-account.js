@@ -1,7 +1,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Accounts', {
-      account_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -19,17 +19,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      account_type: {
+      accountType: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      inc_total_balance: {
+      includeTotalBalance: {
         type: Sequelize.BOOLEAN,
-        defaultValue: true,
         allowNull: false,
+        defaultValue: true,
       },
-      user_uuid: {
-        type: Sequelize.UUID,
+      userId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       createdAt: {

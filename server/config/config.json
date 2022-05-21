@@ -1,4 +1,5 @@
 {
+
   "development": {
     "username": "root",
     "password": null,
@@ -7,10 +8,10 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "h51899c_alex",
+    "password": "66EgdQ2DYvRtbpP",
+    "database": "h51899c_finapp",
+    "host": "cp5ua.hyperhost.ua",
     "dialect": "mysql"
   },
   "production": {
