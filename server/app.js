@@ -19,7 +19,7 @@ app.use('/api/v1/accounts', accountRoutes)
 app.listen(PORT, async () => {
   console.log(`Sever started on port ${PORT}`)
   // Recreate DB
-  // await sequelize.sync({ force: true })
-  await sequelize.authenticate()
+  await sequelize.sync({ force: true })
+  // await sequelize.authenticate()
   console.log('DB connected')
 })
