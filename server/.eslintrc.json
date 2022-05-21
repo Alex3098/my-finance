@@ -1,0 +1,26 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:node/recommended"
+    ],
+    "plugins": ["prettier"],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+      // "prettier/prettier": "error",
+      "linebreak-style": 0,
+      "eslint linebreak-style": [0, "error", "windows"],
+      // "import/no-unresolved": [2, { "commonjs": true }],
+      "no-unused-vars": "warn",
+      "no-console": "off",
+      "func-names": "off",
+      "semi": 0
+    }
+}
