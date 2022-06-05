@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate( {User, CategoryIcon }) {
       // define association here
-      this.belongsTo(User, { foreignKey: 'userId', as: 'users' })
-      this.hasMany(CategoryIcon, { foreignKey: 'iconId', as: 'categoryImages' } )
+      this.belongsTo(User)
+      // this.hasOne(CategoryIcon, { foreignKey: 'iconId', as: 'categoryImages' } )
     }
 
     toJSON() {
@@ -32,14 +32,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     categoryType: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    iconId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    userId: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {

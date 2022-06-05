@@ -11,12 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({ Category }) {
       // define association here
-      this.belongsTo(Category, { foreignKey: "iconId", as: "categories" })
+      // this.belongsTo(Category, { foreignKey: 'iconId', as: 'categoryImages' })
     }
   }
   CategoryIcon.init({
     image: {
       type: DataTypes.BLOB,
+      allowNull: false,
+    },
+    iconId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {

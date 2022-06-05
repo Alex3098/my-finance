@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ User }) {
-      this.belongsTo(User, { foreignKey: 'userId', as: 'users' })
+      this.belongsTo(User)
     }
 
     toJSON() {
@@ -42,10 +42,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true,
-    },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
     },
   }, {
     sequelize,
